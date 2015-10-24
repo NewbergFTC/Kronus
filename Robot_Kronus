@@ -1,0 +1,47 @@
+package com.qualcomm.ftcrobotcontroller.opmodes;
+
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.hardware.DcMotor;
+ /**
+ * Created by ngree_000 on 10/13/2015.
+ **/
+public class Robot_Kronus extends OpMode {
+    final static double MOTOR_POWER = 1;
+
+    DcMotor motorRight1;
+    DcMotor motorRight2;
+    DcMotor motorLeft1;
+    DcMotor motorLeft2;
+
+
+    public void runOpMode() {
+        motorLeft1 = hardwareMap.dcMotor.get("motor_1");
+        motorRight1 = hardwareMap.dcMotor.get("motor_2");
+        motorLeft2 = hardwareMap.dcMotor.get("motor_3");
+        motorRight2 = hardwareMap.dcMotor.get("motor_4");
+
+        motorRight1.setDirection(DcMotor.Direction.REVERSE);
+        motorRight2.setDirection(DcMotor.Direction.REVERSE);
+
+
+        motorLeft1.setPower(MOTOR_POWER);
+        motorLeft2.setPower(MOTOR_POWER);
+        motorRight1.setPower(MOTOR_POWER);
+        motorRight2.setPower(MOTOR_POWER);
+
+
+        stop();
+
+    }
+
+
+
+    public void init() {
+
+    }
+
+
+    public void loop() {
+
+    }
+}
